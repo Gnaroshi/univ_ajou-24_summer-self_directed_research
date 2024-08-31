@@ -1,0 +1,34 @@
+# @package _global_
+defaults:
+  - override /train/optimizer: sgd
+  - override /dataset: cifar10
+  - override /model: wrn
+
+gpu: 0
+name: FixMatch
+
+train:
+  setup: fixmatch
+  epochs: 1024
+  batch_size: 64
+  iter_per_epoch: 1024 # iter_per_epoch * epochs * batch = 2**20 * 64
+  mu: 7
+  lambda_u: 1.0
+  ema: 0.999
+
+  scheduler:
+    warmup_epochs: 0
+    sched_on_updates: True
+    min_lr: 5.85e-3
+
+  optimizer:
+    lr: 0.03
+    weight_decay: 5e-4 # cifar100 1e-3
+
+model:
+  depth: 28
+  width: 2 # cifar100 8
+
+dataset:
+  augmentation:
+    auto_aug: randaugMC-n2-m10

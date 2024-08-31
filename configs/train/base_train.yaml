@@ -1,0 +1,30 @@
+defaults:
+  - scheduler: cosine
+  - optimizer: lamb
+
+setup: baseline
+
+epochs: 100
+iter_per_epoch:
+batch_size: 256
+total_batch: null
+
+num_workers: 8
+seed: 42
+log_interval: 100
+
+criteria_metric: Top1
+criteria_decreasing: False
+eval_metrics: [ Top1 , Top5 ] # F1Score, Specificity, Recall, Precision, AUROC, ConfusionMatrix
+
+ema: False
+criterion: crossentropy
+bce_loss: False
+bce_target_thresh:
+
+sync_bn: False
+dist_bn: reduce # [ broadcast | reduce ]
+
+channels_last: True
+
+resume: False

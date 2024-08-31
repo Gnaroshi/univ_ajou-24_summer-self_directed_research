@@ -1,0 +1,28 @@
+defaults:
+  - augmentation: base_augmentation
+
+name: imageNet
+dataset_name: imageNet
+root: /data/imageNet
+task: multiclass
+samples_per_class: null
+
+in_channels: 3
+num_classes: 1000
+train_size: [ 3,224,224 ]
+test_size: [ 3,224,224 ]
+
+train: train
+valid: validation
+test: test
+
+augmentation:
+  mean: [ 0.485, 0.456, 0.406 ]
+  std: [ 0.229, 0.224, 0.225 ]
+
+  color_jitter: 0.4
+  smoothing: 0.1
+  mixup: 0.1
+  cutmix: 1.0
+  crop_pct: 0.95
+  auto_aug: rand-m7-mstd0.5-inc1

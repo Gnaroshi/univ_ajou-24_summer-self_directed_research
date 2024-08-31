@@ -1,0 +1,34 @@
+# @package _global_
+defaults:
+  - override /train/optimizer: sgd
+  - override /dataset: cifar100
+
+gpu: 0
+name: resnet50_cifar
+strategy: auto
+
+train:
+  epochs: 100
+  batch_size: 256
+  total_batch: 256
+  num_workers: 4
+  bce_loss: False
+  target_thresh: 0.0
+
+  scheduler:
+    warmup_epochs: 5
+    warmup_lr: 1e-4
+    min_lr: 1e-4
+
+  optimizer:
+    opt: sgd
+    lr: 0.25
+    weight_decay: 1e-4
+
+model:
+  model_name: resnet50_cifar
+  drop_path_rate: 0.0
+
+dataset:
+  augmentation:
+    cutmix: 1.0

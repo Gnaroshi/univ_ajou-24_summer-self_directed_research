@@ -1,0 +1,6 @@
+session_name: fixmatch
+windows:
+  - window_name: window
+    layout: tiled
+    panes:
+      - python main.py +setup=fixmatch dataset=cifar10 dataset.samples_per_class=4 gpu=7

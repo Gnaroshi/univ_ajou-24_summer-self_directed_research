@@ -30,8 +30,9 @@ Please check in several yaml files in conf/ directory.
 
 |                   Model                   | Top-1 | Top-5 | # Params | FLOPs | Train time |
 |:-----------------------------------------:|:-----:|:-----:|:--------:|:-----:|:----------:|
-|  FixMatch with SimCLR at supervised data  |   -   |   -   |    -     |   -   |     -      |
-| FixMatch with SimCLR at unsupervised data |   -   |   -   |    -     |   -   |     -      |
+|  FixMatch  |   84.6   |   -   |    -     |   -   |     18h 27m 50s      |
+|  FixMatch with SimCLR at supervised data  |   53.2   |   -   |    -     |   -   |     2d 1h 9m 12s (84%) + alpha(16%)      |
+| FixMatch with SimCLR at unsupervised data |   92.4   |   -   |    -     |   -   |     23h 7m 17s      |
 
 ## Reference
 
